@@ -46,7 +46,7 @@ $seconds-per-image: 5;
   margin: 40px auto 40px;
   position: relative;
   height: 600px;
-  width: 800px;
+  width: 900px;
   overflow: visible;
 }
 #slideshow li.first-animation {
