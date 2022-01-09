@@ -1,0 +1,421 @@
+@charset "UTF-8";
+/*!
+* CSS3 Image Slideshow
+* css3-slideshow-1.1.0.css
+* http://brianfernalld.com
+* MIT licensed
+*
+* Copyright (C) 2013 Brian Fernalld, http://brianfernalld.com
+*/
+/* general reset */
+html, body, div, span, object, embed, ruby, output, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+#content h1 {
+  font-family: "Helvetica", Arial, Georgia;
+  font-size: 45px;
+  text-align: center;
+  padding: 20px;
+}
+
+#container {
+  margin: 0 auto;
+}
+
+/*
+@TODO: Add dynamic keyframes depending on number of images and seconds per image.
+$number-of-images: 5;
+$seconds-per-image: 5;
+*/
+#slideshow {
+  margin: 40px auto 40px;
+  position: relative;
+  height: 600px;
+  width: 800px;
+  overflow: visible;
+}
+#slideshow li.first-animation {
+  position: absolute;
+  top: 0;
+  /*name, duration, timing function, iteration count*/
+  -moz-animation: cycle 25s ease-in-out infinite;
+  -webkit-animation: cycle 25s ease-in-out infinite;
+}
+#slideshow li.second-animation {
+  position: absolute;
+  top: 0;
+  -moz-animation: cycletwo 25s ease-in-out infinite;
+  -webkit-animation: cycletwo 25s ease-in-out infinite;
+}
+#slideshow li.third-animation {
+  position: absolute;
+  top: 0;
+  -moz-animation: cyclethree 25s ease-in-out infinite;
+  -webkit-animation: cyclethree 25s ease-in-out infinite;
+}
+#slideshow li.fourth-animation {
+  position: absolute;
+  top: 0;
+  -moz-animation: cyclefour 25s ease-in-out infinite;
+  -webkit-animation: cyclefour 25s ease-in-out infinite;
+}
+#slideshow li.fifth-animation {
+  position: absolute;
+  top: 0;
+  -moz-animation: cyclefive 25s ease-in-out infinite;
+  -webkit-animation: cyclefive 25s ease-in-out infinite;
+}
+#slideshow :hover li {
+  animation-play-state: paused;
+}
+
+#mask {
+  overflow: hidden;
+  height: 600px;
+}
+
+/*
+-Define the total number of images to use in the slider
+    5
+-Define the length of animation for each image
+    5 seconds
+-Define the total duration of the animation
+    Multiply the total number of images by the duration of each image:
+    5 images × 5 seconds = 25 seconds
+-Calculate how many keyframes equals one second
+    Divide the total number of keyframes by the total duration of the animation.
+    100 keyframes / 25 seconds = 4 keyframes
+    4 keyframes = 1 second
+*/
+@-webkit-keyframes cycle {
+  0% {
+    opacity: 1;
+  }
+  /*1 second = 4%*/
+  4% {
+    opacity: 1;
+  }
+  8% {
+    opacity: 1;
+  }
+  12% {
+    opacity: 1;
+  }
+  16% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  96% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes cycletwo {
+  0% {
+    opacity: 0;
+  }
+  /*1 second = 4%*/
+  16% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+  }
+  32% {
+    opacity: 1;
+  }
+  36% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes cyclethree {
+  0% {
+    opacity: 0;
+  }
+  /*1 second = 4%*/
+  36% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  44% {
+    opacity: 1;
+  }
+  48% {
+    opacity: 1;
+  }
+  52% {
+    opacity: 1;
+  }
+  56% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes cyclefour {
+  0% {
+    opacity: 0;
+  }
+  /*1 second = 4%*/
+  56% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  64% {
+    opacity: 1;
+  }
+  68% {
+    opacity: 1;
+  }
+  72% {
+    opacity: 1;
+  }
+  76% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes cyclefive {
+  0% {
+    opacity: 0;
+  }
+  /*1 second = 4%*/
+  76% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  84% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes cycle {
+  0% {
+    opacity: 1;
+  }
+  /*1 second = 4%*/
+  4% {
+    opacity: 1;
+  }
+  8% {
+    opacity: 1;
+  }
+  12% {
+    opacity: 1;
+  }
+  16% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  96% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes cycletwo {
+  0% {
+    opacity: 0;
+  }
+  /*1 second = 4%*/
+  16% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+  }
+  32% {
+    opacity: 1;
+  }
+  36% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes cyclethree {
+  0% {
+    opacity: 0;
+  }
+  /*1 second = 4%*/
+  36% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  44% {
+    opacity: 1;
+  }
+  48% {
+    opacity: 1;
+  }
+  52% {
+    opacity: 1;
+  }
+  56% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes cyclefour {
+  0% {
+    opacity: 0;
+  }
+  /*1 second = 4%*/
+  56% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  64% {
+    opacity: 1;
+  }
+  68% {
+    opacity: 1;
+  }
+  72% {
+    opacity: 1;
+  }
+  76% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes cyclefive {
+  0% {
+    opacity: 0;
+  }
+  /*1 second = 4%*/
+  76% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  84% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*Full keyframe cycle*/
+/*@keyframes cycle {
+  0%    { opacity: 1; }
+  4%    { opacity: 1; }
+  8%    { opacity: 1; } 
+  12%   { opacity: 1; } 
+  16%   { opacity: 1; } 
+  20%   { opacity: 0; } 
+  24%   { opacity: 0; } 
+  28%   { opacity: 0; } 
+  32%   { opacity: 0; } 
+  36%   { opacity: 0; } 
+  40%   { opacity: 0; } 
+  44%   { opacity: 0; } 
+  48%   { opacity: 0; } 
+  52%   { opacity: 0; } 
+  56%   { opacity: 0; }
+  60%   { opacity: 0; }
+  64%   { opacity: 0; }
+  68%   { opacity: 0; }
+  72%   { opacity: 0; }
+  76%   { opacity: 0; }
+  80%   { opacity: 0; }
+  84%   { opacity: 0; }
+  88%   { opacity: 0; }
+  92%   { opacity: 0; }
+  96%   { opacity: 0; }
+  100%  { opacity: 1; }
+}*/
